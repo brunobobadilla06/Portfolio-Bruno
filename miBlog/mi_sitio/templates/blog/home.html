@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block title %}Inicio - Mi blog{% endblock %}
+{% block content %}
+
+    <h2>Ultimos post</h2>
+    <ul>
+        {% for p in post %}
+            <li>
+                <a href="{% url 'detalle_post' slug=p.slug %}">{{p.titulo}}</a>
+                <small>- {{ p.creado|date:"d/m/Y h:i" }}</small>
+            </li>
+        {% empty %}
+        <li>No hay posts punlicados aun. </li>
+        {% endfor %}
+
+    </ul>
+{% endblock %}

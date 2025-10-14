@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% block title %}{{post.titulo}} - MiBlog{% endblock %}
+{% block content %}
+    <article>
+        <h2>{{ post.titulo }}</h2>
+        <p><small>{{ post.creado|date:"d/m/Y H:i" }}</small></p>
+        <div>{{ post.contenido|linebreaks }}</div>
+    </article>
+{% endblock %}
